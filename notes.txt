@@ -1,0 +1,28 @@
+Compiling and Running:
+rustc main.rs 
+./main 
+
+rustfmt - automatic formatter tool:
+    - Format code in a particular style
+
+cargo new <name_of_the_project>
+
+cargo build (gotta use the whole path to the binary after executing this)
+    - build a project
+
+cargo run (most used)
+    - build a project and run it in one step
+
+cargo check 
+    - Used to check if the project is still compiling
+
+Cargo stores the results of the build in the target/debug directory
+
+cargo build --release
+    - Compile project with optimizations
+    - The executable will be created in target/release
+
+Git:
+    git clone example.org/someproject
+    cd someproject
+    cargo build
