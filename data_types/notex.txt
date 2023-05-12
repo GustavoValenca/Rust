@@ -1,0 +1,15 @@
+Rust is a statically typed language which means that it must know the types of all variables at compile time
+
+- scalar types
+    A scalar type represents a single value. Rust has four primary scalar type:
+
+    - integers
+    - floating-point numbers
+    - Booleans
+    - characters
+
+- Compound types
+    Compound types can group multiple values into one type. Rust has two primitive compound types:
+    
+    - tuples
+    - arrays
