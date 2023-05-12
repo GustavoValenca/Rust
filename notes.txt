@@ -26,3 +26,9 @@ Git:
     git clone example.org/someproject
     cd someproject
     cargo build
+
+cargo update
+    - ignores the Cargo.lock file and figures out all the latest verisons that fit the specifications in Cargo.toml
+
+cargo doc --open 
+    - builds documentation provided by all the dependencies locally and opens it in the browser
