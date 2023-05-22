@@ -1,61 +1,70 @@
 fn main() {
-    // Variable Scope
+    // // Variable Scope
 
-    let s = "hi";
-    println!("The value of s is {s}");
+    // let s = "hi";
+    // println!("The value of s is {s}");
 
-    {
-        let s = "hello";  
-        println!("The value of s is {s}");
-    }
+    // {
+    //     let s = "hello";  
+    //     println!("The value of s is {s}");
+    // }
 
-    println!("The value of s is {s}");
+    // println!("The value of s is {s}");
 
-    // The String Type
+    // // The String Type
 
-    let mut s = String::from("hello");
+    // let mut s = String::from("hello");  // Creating a String type from a string literal
     
-    s.push_str(", world!");  // push_str() appends a literal to a String
+    // s.push_str(", world!");  // push_str() appends a literal to a String
 
-    println!("{}", s); // This will print `hello, world!`   
+    // println!("{}", s); // This will print `hello, world!`   
 
-    // Move
+    // // Move
 
-    let s1 = String::from("Hello");
-    let s2 = s1;
+    // let s1 = String::from("Hello");
+    // let s2 = s1;
 
-    // Clone
+    // // Clone
 
-    let s1 = String::from("hello");
-    let s2 = s1.clone();
+    // let s1 = String::from("hello");
+    // let s2 = s1.clone();
 
-    // Ownership and Functions
+    // // Ownership and Functions
 
-    let s = String::from("hello");
+    // let s = String::from("hello");
 
-    takes_ownership(s);
+    // takes_ownership(s);
 
-    let x = 5;
+    // let x = 5;
 
-    makes_copy(x);
+    // makes_copy(x);
 
-    // Return Values and Scope
+    // // Return Values and Scope
 
-    let s1 = gives_ownership();
+    // let s1 = gives_ownership();
 
-    let s2 = String::from("hello");
+    // let s2 = String::from("hello");
 
-    let s3 = takes_and_gives_back(s2);
+    // let s3 = takes_and_gives_back(s2);
 
-    println!("{}", s3);
+    // println!("{}", s3);
 
-    // Return multiple values using a tuple
+    // // Return multiple values using a tuple
 
-    let s1 = String::from("hello");
+    // let s1 = String::from("hello");
 
-    let (s2, len) = calculate_length(s1);
+    // let (s2, len) = calculate_length(s1);
 
-    println!("The length of '{}' is {}.", s2, len)
+    // println!("The length of '{}' is {}.", s2, len)
+
+    let tup1 = (500, 6.4, "Hello");
+
+    let tup2 = tup1;
+
+    let (a, b, c) = tup1;
+    let (x, y, z) = tup2;
+
+    println!("O valor de tup1 é {} e o de tup2 é {}", a, x);
 }
 
 
