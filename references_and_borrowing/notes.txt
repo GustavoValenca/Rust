@@ -1,0 +1,1 @@
+A reference's scope starts from where it is introduced and continues through the last time that reference is used.
