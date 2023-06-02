@@ -1,0 +1,7 @@
+instead of using the -> syntax for pointers in C and C++, Rust uses automatic referencing and dereferencing.
+
+The following are the same:
+
+p1.distance(&p2);
+(&p1).distance(&p2);
+
