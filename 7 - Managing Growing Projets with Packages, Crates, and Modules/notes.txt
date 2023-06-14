@@ -1,0 +1,7 @@
+Compiler:
+    - Start from the crate root
+    - Declaring modules
+    - Declaring submodules
+    - Paths to code in modules
+    - Private vs public
+    - The "use" keyword
