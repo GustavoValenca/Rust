@@ -1,1 +1,0 @@
-Unlike languages such as Ruby and JavaScritp, Rust will not automatically try to convert non-Boolean types to a Boolean.
