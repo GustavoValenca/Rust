@@ -1,0 +1,4 @@
+Rust has three kinds of loops: loop, while and for.
+
+Loop:
+    - The loop keyword tells Rust to execute a block of code over and over again forever or until you explicitly tell it to stop
