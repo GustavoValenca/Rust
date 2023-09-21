@@ -1,7 +1,19 @@
+use std::io;
 use rand::Rng;
+use std::collections::HashMap;
 
 fn main() {
     let mut v: Vec<i32> = Vec::new();
+
+    // Vector length
+    println!("Enter the vector's length: ");
+    let mut n = String::new();
+    io::stdin()
+        .read_line(&mut n)
+        .expect("Failed to read line");
+    
+        let n: usize = n.trim().parse()
+            .expect("Please type a number!");
 
     let mut counter = 0;
     loop {
@@ -10,7 +22,7 @@ fn main() {
 
         v.push(x);
 
-        if counter == 13 {
+        if counter == n {
             break;
         }
     }
@@ -22,7 +34,7 @@ fn main() {
     let mut j : usize;
     let mut j_signed : i32;
 
-    for i in 1..13 {
+    for i in 1..n {
 
         key = v[i];
         
@@ -45,8 +57,41 @@ fn main() {
             v[j + 1] = key;
         }
 
-        println!("After execution {i}");
-        println!("{:?}", v);
+        // println!("After execution {i}");
+        // println!("{:?}", v);
     }
+
+    println!("Sorted vector: ");
+    println!("{:?}", v);
+
+    let median = v[n / 2];
+    println!("Median: {median}");
+
+    let mut map = HashMap::new();
+
+    for i in &v {
+        let count = map.entry(i).or_insert(0);
+        *count += 1;
+    }
+
+    println!("Frequency of values: ");
+    println!("{:?}", map);
+
+    let mut biggest = 1;
+    for (_, value) in &map {
+        if *value > biggest {
+            biggest = *value;
+        }
+    }
+
+    let mut mode: Vec<i32> = Vec::new();
+    for (key, value) in &map {
+        if *value == biggest {
+            mode.push(**key);
+        }
+    }
+
+    println!("Mode: ");
+    println!("{:?}", mode);
 }
 
