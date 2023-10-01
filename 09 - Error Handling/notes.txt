@@ -1,0 +1,13 @@
+Rust groups errors into two major categories:
+    - recoverable errors
+        Report the problem and retry the operation.
+        Ex: file not found
+    - unrecoverable errors
+        Immediately stop the program.
+        Ex: trying to access a location beyond the end of an array
+
+By default, when a panic occurs, the program starts unwinding, which means
+Rust walks back up the stack and cleans up the data from each function. However,
+is a lot of work. Rust, therefore, allows you to choose the alternative of immediately 
+aborting, which ends the program without cleaning up. That memory needs to be cleaned by 
+the operating system.
