@@ -1,0 +1,6 @@
+unwrap calls panic!
+expect lets us choose the panic! message
+
+in production-quality code, most Rustaceans choose expect rather than unwrap and five more context about why the operation is expected to always succeed.
+
+? operation can be used when the error type of the function is compatible with ? error return
