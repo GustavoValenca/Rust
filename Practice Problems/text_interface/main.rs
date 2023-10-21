@@ -21,7 +21,7 @@ fn main(){
         }
         else if option == "C" {
             println!("Company Employees:");
-            println!("{:?}", deps);
+            list_company(&mut deps);
         }
         else if option == "X" {
             println!("Exited successfully.");
@@ -95,10 +95,23 @@ fn list_department(deps: &mut HashMap<String, Vec<String>>){
 
     match v {
         Some(vector) => {
-            println!("{:?}", vector);
+            list_employees(vector);
         },
         None => {
             println!("Invalid department.");
         }
     }
+}
+
+fn list_company(deps: &mut HashMap<String, Vec<String>>){
+    for (key, value) in deps {
+        println!("{key}");
+        list_employees(value);
+    }
+}
+
+fn list_employees(vec: &Vec<String>){
+    let mut v = vec.clone();
+    v.sort();
+    println!("{:?}", v);
 }
