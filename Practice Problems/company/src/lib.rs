@@ -1,36 +1,7 @@
 use std::collections::HashMap;
 use std::io;
-use std::process;
 
-fn main(){
-    let mut deps: HashMap<String, Vec<String>> = HashMap::new();
-
-    loop {
-        menu();
-        let mut option = String::new();
-        get_string_input(&mut option);
-        option = capitalize(&option);
-        println!("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-
-
-        if option == "A" {
-            add_employee(&mut deps);
-        }
-        else if option == "D" {
-            list_department(&mut deps);
-        }
-        else if option == "C" {
-            println!("Company Employees:");
-            list_company(&mut deps);
-        }
-        else if option == "X" {
-            println!("Exited successfully.");
-            process::exit(0);
-        }
-    }
-}
-
-fn capitalize(s: &str) -> String {
+pub fn capitalize(s: &str) -> String {
     let mut c = s.chars();
     match c.next() {
         None => String::new(),
@@ -38,7 +9,7 @@ fn capitalize(s: &str) -> String {
     }
 }
 
-fn menu(){
+pub fn menu(){
     println!("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     println!("(A): Add new employee to a department");
     println!("(D): List all people in a department");
@@ -47,14 +18,14 @@ fn menu(){
     println!("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 }
 
-fn get_string_input(reference: &mut String){
+pub fn get_string_input(reference: &mut String){
     io::stdin()
         .read_line(reference)
         .expect("Failed to read line");
     reference.pop();
 }
 
-fn add_employee(deps: &mut HashMap<String, Vec<String>>){
+pub fn add_employee(deps: &mut HashMap<String, Vec<String>>){
     let mut d = String::new();
 
     println!("Enter the Department:");
@@ -85,7 +56,7 @@ fn add_employee(deps: &mut HashMap<String, Vec<String>>){
     }
 }
 
-fn list_department(deps: &mut HashMap<String, Vec<String>>){
+pub fn list_department(deps: &mut HashMap<String, Vec<String>>){
     let mut d = String::new();
     println!("Enter the Department: ");
     get_string_input(&mut d);
@@ -103,14 +74,14 @@ fn list_department(deps: &mut HashMap<String, Vec<String>>){
     }
 }
 
-fn list_company(deps: &mut HashMap<String, Vec<String>>){
+pub fn list_company(deps: &mut HashMap<String, Vec<String>>){
     for (key, value) in deps {
         println!("{key}");
         list_employees(value);
     }
 }
 
-fn list_employees(vec: &Vec<String>){
+pub fn list_employees(vec: &Vec<String>){
     let mut v = vec.clone();
     v.sort();
     println!("{:?}", v);
